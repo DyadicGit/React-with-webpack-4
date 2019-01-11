@@ -1,0 +1,46 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "classes": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "rules": {
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
+    "global-require": "off",
+    "no-console": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "no-underscore-dangle": "off",
+    "prefer-promise-reject-errors": "off",
+    "no-nested-ternary": "off",
+    "react/no-multi-comp": "off",
+    "react/no-unescaped-entities": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "linebreak-style": "off",
+    "quotes":"warn",
+    "max-statements-per-line": "off",
+    "react/jsx-one-expression-per-line": "off",
+
+    "react/forbid-prop-types": "off",
+    "react/no-array-index-key": "off",
+    "react/sort-comp": "off",
+    "react/destructuring-assignment": "off",
+    "object-curly-newline": ["error", {
+      "ImportDeclaration": { "multiline": true },
+      "ExportDeclaration": { "multiline": true }
+    }],
+    "max-len": ["error", { "code": 120 }]
+  },
+  "plugins": [
+    "react"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "react-with-webpack-4",
+  "version": "1.0.0",
+  "description": "minimalistic React app which I use for playgrounds",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open",
+    "dev": "webpack --mode development --output ./dist/main.js",
+    "prod": "webpack --mode production --output ./dist/main.js",
+    "watch": "webpack --watch -d"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.12.3",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.0.7",
+    "mini-css-extract-plugin": "^0.2.0",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  }
+}
