@@ -5,3 +5,4 @@ npm i && npm run start
 ```
 **To additional Init commit installed:**
  * Eslint
+ * upgraded to Babel 7

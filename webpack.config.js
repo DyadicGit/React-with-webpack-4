@@ -2,6 +2,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
+  devtool: 'eval-source-map',
   // uncomment line below in case you want to change entry point
   // entry: './src_1/index.js', // to change entry point
   module: {
@@ -11,6 +12,10 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
+          options: {
+            presets: ['@babel/env', '@babel/react'],
+            plugins: ['@babel/plugin-transform-runtime', '@babel/plugin-proposal-class-properties'],
+          },
         },
       },
       {
@@ -39,5 +44,6 @@ module.exports = {
       filename: '[name].css',
       chunkFilename: '[id].css',
     }),
+
   ],
 };
