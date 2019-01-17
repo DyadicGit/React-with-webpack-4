@@ -1,10 +1,19 @@
 import React from 'react';
-import FetchButton from './views/fetchButton';
+import FetchSingle from './views/fetch/fetchSingle';
+import FetchMultiple from './views/fetch/fetchMultiple';
+import SubscriptionSection from './views/SubscriptionSection';
+import SubjectSection from './views/SubjectSection';
 
 const App = () => (
   <div>
-    <p>React here!</p>
-    <FetchButton />
+    <h1><a href="https://rxjs-dev.firebaseapp.com/guide/overview">OVERVIEW</a></h1>
+    <SubscriptionSection style={{ border: 'solid pink 2px', padding: 10, marginBottom: 15 }} />
+    <SubjectSection style={{ border: 'solid purple 2px', padding: 10, marginBottom: 15 }} />
+    <h3>Miscellaneous</h3>
+    <p>FetchSingle</p>
+    <FetchSingle />
+    <p>Fetch multiple</p>
+    <FetchMultiple />
   </div>
 );
 

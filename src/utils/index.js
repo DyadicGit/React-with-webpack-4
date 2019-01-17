@@ -1,3 +1,5 @@
+import api from './endpoints';
+
 const isJson = (str) => {
   try {
     return JSON.parse(str);
@@ -6,7 +8,7 @@ const isJson = (str) => {
   }
 };
 
-const handleResponse = async (response) => {
+const responseHandlerOldFashioned = async (response) => {
   if (response.ok) {
     const data = await response.text();
     return isJson(data) || data;
@@ -14,7 +16,12 @@ const handleResponse = async (response) => {
   throw Error(response.status);
 };
 
+const errorHandler = err => console.log(`something wrong occurred: ${err}`);
+const responseHandler = ({ response }) => console.log(response);
+
 export default {
-  handleResponse,
-  isJson,
+  responseHandlerOldFashioned,
+  errorHandler,
+  responseHandler,
+  api,
 };
