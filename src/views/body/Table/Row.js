@@ -1,10 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+const EyeRow = styled.div`
+  place-items: center;
+  place-content: center;
+  display: flex;
+  position: relative;
+  height: 100%;
+`;
+
 
 const View = ({ contact }) => (
   <tr id={contact.id}>
-    <td>{String(contact.active)}</td>
+    <td>
+      <EyeRow>{contact.active
+        ? <FontAwesomeIcon icon="eye" />
+        : <FontAwesomeIcon icon="eye-slash" flip="horizontal" />}
+      </EyeRow>
+    </td>
     <td>{contact.name}</td>
     <td>{contact.surname}</td>
     <td>{contact.city}</td>

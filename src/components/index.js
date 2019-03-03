@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const SpanOpenSans = styled.span`
   font-family: "Open Sans Semibold", sans-serif;
@@ -47,3 +49,19 @@ const LoadingText = styled.div`
 export const LoadingComponent = () => (
   <LoadingText>loading</LoadingText>
 );
+
+const Button = styled.button`
+  background-color: rgba(0,0,0,0);
+  border: rgba(0,0,0,0);
+  cursor: pointer;
+`;
+export const IconButton = ({ icon, className, onClick, ...props }) => (
+  <Button className={className} onClick={onClick}>
+    <FontAwesomeIcon icon={icon} {...props} />
+  </Button>
+);
+IconButton.propTypes = {
+  className: PropTypes.string,
+  icon: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+};
