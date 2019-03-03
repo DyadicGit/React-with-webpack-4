@@ -6,20 +6,23 @@ import {
   RightHeader, RightToolbar, RightBody, RightFooter,
   Page,
 } from './App.styles';
+import { LoadingComponent } from './components';
+import utils from './utils';
+// header
 import Logo from './views/header/Logo';
 import Navbar from './views/header/Navbar';
 import Search from './views/header/Search';
 import Login from './views/header/Login';
-
+// toolbar
 import FilterName from './views/toolbar/FilterName';
 import FilterCity from './views/toolbar/FilterCity';
 import FilterShowActive from './views/toolbar/FilterShowActive';
 import FilterGo from './views/toolbar/FilterGo';
 import AddNewContract from './views/toolbar/AddNewContract';
-
+// body
 import ContactDisplay from './views/body/ContactDisplay';
-import Table from './views/body/Table';
-
+import Table from './views/body/Table/Table';
+// footer
 import About from './views/footer/About';
 import LinksLeft from './views/footer/LinksLeft';
 import LastSyncedLogo from './views/footer/LastSyncedLogo';
@@ -31,40 +34,78 @@ import Availability from './views/footer/Availability';
 
 library.add(faUserCircle);
 
-const App = () => (
-  <Page>
-    <LeftHeader className="header" />
-    <LeftToolbar className="toolbar" />
-    <LeftBody className="body" />
-    <LeftFooter className="footer" />
-    <RightHeader className="header" />
-    <RightToolbar className="toolbar" />
-    <RightBody className="body" />
-    <RightFooter className="footer" />
 
-    <Logo className="header" />
-    <Navbar className="header" />
-    <Search className="header" />
-    <Login className="header" />
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      loading: false,
+      contacts: [],
+      activeContact: null,
+    };
+  }
 
-    <FilterName className="toolbar" />
-    <FilterCity className="toolbar" />
-    <FilterShowActive className="toolbar" />
-    <FilterGo className="toolbar" />
-    <AddNewContract className="toolbar" />
+  componentDidMount = async () => {
+    this.setState({ loading: true });
+    await this.fetchContacts();
+  };
 
-    <ContactDisplay className="body" />
-    <Table className="body" />
+  fetchContacts = async () => {
+    try {
+      const response = await fetch('../../misc/contacts.json');
+      const data = await utils.handleResponse(response);
+      this.setState({ loading: false, contacts: data });
+      console.log(this.state.contacts);
+    } catch (e) {
+      console.error(e);
+      this.setState({ loading: false });
+    }
+  };
 
-    <LinksLeft className="footer" />
-    <LastSyncedLogo className="footer darker" />
-    <LastSynced className="footer darker" />
-    <ForceSync className="footer darker" />
-    <LinksRight className="footer" />
-    <About className="footer" />
-    <AvailabilityLogo className="footer darker" />
-    <Availability className="footer darker" />
-  </Page>
-);
+  setActiveContact = () => { console.log('active'); };
+
+  handlers = {
+    setActiveContact: this.setActiveContact,
+  };
+
+  render() {
+    return (
+      <Page>
+        <LeftHeader className="header" />
+        <LeftToolbar className="toolbar" />
+        <LeftBody className="body" />
+        <LeftFooter className="footer" />
+        <RightHeader className="header" />
+        <RightToolbar className="toolbar" />
+        <RightBody className="body" />
+        <RightFooter className="footer" />
+
+        <Logo className="header" />
+        <Navbar className="header" />
+        <Search className="header" />
+        <Login className="header" />
+
+        <FilterName className="toolbar" />
+        <FilterCity className="toolbar" />
+        <FilterShowActive className="toolbar" />
+        <FilterGo className="toolbar" />
+        <AddNewContract className="toolbar" />
+
+        <ContactDisplay className="body" activeContact={this.state.activeContact} />
+        <Table className="body" contacts={this.state.contacts} />
+
+        <LinksLeft className="footer" />
+        <LastSyncedLogo className="footer darker" />
+        <LastSynced className="footer darker" />
+        <ForceSync className="footer darker" />
+        <LinksRight className="footer" />
+        <About className="footer" />
+        <AvailabilityLogo className="footer darker" />
+        <Availability className="footer darker" />
+        {this.state.loading && <LoadingComponent />}
+      </Page>
+    );
+  }
+}
 
 export default App;
