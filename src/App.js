@@ -42,6 +42,7 @@ class App extends React.Component {
       loading: false,
       contacts: [],
       activeContact: null,
+      sortOrderName: 'asc',
     };
   }
 
@@ -64,8 +65,21 @@ class App extends React.Component {
 
   setActiveContact = () => { console.log('active'); };
 
+  toggleSortOrderName = () => {
+    const { sortOrderName, contacts } = this.state;
+    const comparator = sortOrderName === 'asc'
+      ? (a, b) => a.name.localeCompare(b.name)
+      : (a, b) => b.name.localeCompare(a.name);
+
+    this.setState({
+      sortOrderName: sortOrderName === 'asc' ? 'desc' : 'asc',
+      contacts: contacts.sort(comparator),
+    });
+  };
+
   handlers = {
     setActiveContact: this.setActiveContact,
+    toggleSortOrderName: this.toggleSortOrderName,
   };
 
   render() {
@@ -92,7 +106,12 @@ class App extends React.Component {
         <AddNewContract className="toolbar" />
 
         <ContactDisplay className="body" activeContact={this.state.activeContact} />
-        <Table className="body" contacts={this.state.contacts} />
+        <Table
+          className="body"
+          contacts={this.state.contacts}
+          sortOrderName={this.state.sortOrderName}
+          handlers={this.handlers}
+        />
 
         <LinksLeft className="footer" />
         <LastSyncedLogo className="footer darker" />

@@ -76,9 +76,11 @@ const ColumnWithSort = styled.th`
   }
 `;
 const IconButtonToggle = styled(IconButton)`
-  transition-duration: 0.8s;
-  transition-property: transform;
   color: white;
+  svg {
+    transition-duration: 0.5s;
+    transition-property: transform;
+  }
 `;
 
 export {

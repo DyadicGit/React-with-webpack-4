@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { SectionTable, Table, Header, ColumnWithSort, IconButtonToggle, Body } from './Table.styles';
 import Row from './Row';
 
-const View = ({ className, contacts, sortOrderName }) => (
+const View = ({ className, contacts, sortOrderName, handlers }) => (
   <SectionTable className={className}>
     <Table>
       <Header>
@@ -15,7 +15,7 @@ const View = ({ className, contacts, sortOrderName }) => (
               icon="arrow-down"
               size="lg"
               style={sortOrderName === 'asc' ? {} : { transform: 'rotate(180deg)' }}
-              onClick={() => console.log('llll')}
+              onClick={handlers.toggleSortOrderName}
             />
           </ColumnWithSort>
           <th>Surname</th>
@@ -35,7 +35,10 @@ const View = ({ className, contacts, sortOrderName }) => (
 View.propTypes = {
   className: PropTypes.string.isRequired,
   contacts: PropTypes.array.isRequired,
-  sortOrderName: PropTypes.oneOf('asc', 'desc'),
+  handlers: PropTypes.shape({
+    toggleSortOrderName: PropTypes.func.isRequired,
+  }).isRequired,
+  sortOrderName: PropTypes.oneOf(['asc', 'desc']),
 };
 
 export default View;
