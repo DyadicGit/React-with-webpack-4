@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { SpanOpenSans } from '../../../components';
+import { SpanOpenSans } from '../../components';
 
 const About = styled.div`
   grid-area: about;
@@ -9,7 +9,7 @@ const About = styled.div`
 
 const View = ({ className }) => (
   <About className={className}>
-    <SpanOpenSans>&#x24B8; 2015 Contactify <u>About</u> <u>Privacy</u></SpanOpenSans>
+    <SpanOpenSans>&#x24B8; 2015 Contactify&emsp;<u>About</u>&emsp;<u>Privacy</u></SpanOpenSans>
   </About>
 );
 

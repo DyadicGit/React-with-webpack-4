@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   devtool: 'eval-source-map',
   // uncomment line below in case you want to change entry point
-  // entry: './src_1/index.js', // to change entry point
+  // entry: './src_1/Logo.js', // to change entry point
   module: {
     rules: [
       {
