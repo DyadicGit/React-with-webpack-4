@@ -1,4 +1,5 @@
 import React from 'react';
+import Proptypes from 'prop-types';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -25,16 +26,16 @@ const LetterWithIcon = styled.span`
   align-items: center;
 `;
 
-const view = () => (
-  <SectionLogo>
+const View = ({ className }) => (
+  <SectionLogo className={className}>
     <TextLogo>
       <span>Contact</span>
       <LetterWithIcon>
         <FontAwesomeIcon
           icon="user-circle"
           style={{
-            width: '1.5vw',
-            height: '1.5vh',
+            width: '2vw',
+            height: '2vh',
           }}
         />
         <span>i</span>
@@ -44,4 +45,8 @@ const view = () => (
   </SectionLogo>
 );
 
-export default view;
+View.propTypes = {
+  className: Proptypes.string.isRequired,
+};
+
+export default View;

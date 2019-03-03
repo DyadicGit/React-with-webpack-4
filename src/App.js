@@ -4,7 +4,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import LinksLeft from './views/footer/section-linksLeft';
 import Logo from './views/header/section-logo';
-
+import About from './views/footer/section-about';
 
 library.add(faUserCircle);
 
@@ -19,10 +19,25 @@ const Page = styled.div`
     "leftFooter linksLeft linksLeft linksLeft lastSyncedLogo lastSynced lastSynced forceSync linksRight rightFooter"
     "leftFooter linksLeft linksLeft linksLeft availabilityLogo availability availability availability linksRight rightFooter"
     "leftFooter about about about availabilityLogo availability availability availability linksRight rightFooter";
-    .header: {
+    background-image: linear-gradient(135deg, #1D817B, #1C3C6B);
     
+    .header {
+      background-color: rgba(27, 60, 67, 0.79);
+    }
+    .toolbar {
+      background-color: rgba(27, 77, 91, 0.60);
+    }
+    .body {
+      
+    }
+    .footer {
+      background-color: rgba(31, 43, 61, 0.35);
+      &.darker {
+        background-color: rgba(31, 43, 61, 0.65);
+      }
     }
 `;
+
 const LeftHeader = styled.div`
   grid-area: leftHeader;
 `;
@@ -95,50 +110,40 @@ const AvailabilityLogo = styled.div`
 const Availability = styled.div`
   grid-area: availability;
 `;
-const About = styled.div`
-  grid-area: about;
-`;
-
-const styles = {
-  header: { background: 'rgb(0, 0, 0, 0)' },
-  toolbar: {},
-  body: {},
-  footer: {},
-};
 
 const App = () => (
   <Page>
-    <LeftHeader className={styles.header} />
-    <LeftToolbar className={styles.toolbar} />
-    <LeftBody className={styles.body} />
-    <LeftFooter className={styles.footer} />
-    <RightHeader className={styles.header} />
-    <RightToolbar className={styles.toolbar} />
-    <RightBody className={styles.body} />
-    <RightFooter className={styles.footer} />
+    <LeftHeader className="header" />
+    <LeftToolbar className="toolbar" />
+    <LeftBody className="body" />
+    <LeftFooter className="footer" />
+    <RightHeader className="header" />
+    <RightToolbar className="toolbar" />
+    <RightBody className="body" />
+    <RightFooter className="footer" />
 
-    <Logo className={styles.header} />
-    <Navbar className={styles.header} />
-    <Search className={styles.header} />
-    <Login className={styles.header} />
+    <Logo className="header" />
+    <Navbar className="header" />
+    <Search className="header" />
+    <Login className="header" />
 
-    <FilterName className={styles.toolbar} />
-    <FilterCity className={styles.toolbar} />
-    <FilterShowActive className={styles.toolbar} />
-    <FilterGo className={styles.toolbar} />
-    <AddNewContract className={styles.toolbar} />
+    <FilterName className="toolbar" />
+    <FilterCity className="toolbar" />
+    <FilterShowActive className="toolbar" />
+    <FilterGo className="toolbar" />
+    <AddNewContract className="toolbar" />
 
-    <ContactDisplay className={styles.body} />
-    <Table className={styles.body} />
+    <ContactDisplay className="body" />
+    <Table className="body" />
 
-    <LinksLeft className={styles.footer} />
-    <LastSyncedLogo className={styles.footer} />
-    <LastSynced className={styles.footer} />
-    <ForceSync className={styles.footer} />
-    <LinksRight className={styles.footer} />
-    <About className={styles.footer} />
-    <AvailabilityLogo className={styles.footer} />
-    <Availability className={styles.footer} />
+    <LinksLeft className="footer" />
+    <LastSyncedLogo className="footer darker" />
+    <LastSynced className="footer darker" />
+    <ForceSync className="footer darker" />
+    <LinksRight className="footer" />
+    <About className="footer" />
+    <AvailabilityLogo className="footer darker" />
+    <Availability className="footer darker" />
   </Page>
 );
 
