@@ -48,7 +48,7 @@ const Header = styled.thead`
   th:nth-of-type(4) { width: 11.328vw; }
   th:nth-of-type(5) { width: 17.97vw; }
   th:nth-of-type(6) { width: 12.89vw; }
-  th:nth-of-type(7) { width: 60px; }
+  th:nth-of-type(7) { width: 85px; }
 `;
 const Body = styled.tbody`
   color: rgba(0,0,0,0.69);

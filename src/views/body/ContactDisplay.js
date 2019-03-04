@@ -8,7 +8,7 @@ const borderRadiusSize = '6px';
 const Container = styled.div`
   grid-area: contactDisplay;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   padding-left: 5px;
   padding-right: 10px;
 `;
@@ -61,7 +61,7 @@ const ContactDisplay = styled.div`
   }
   .bodyEmail {
     grid-area: bodyEmail;
-    color: blue;
+    color: #1AB6CF;
     text-decoration-line: underline;
   }
   .bodyPhone {

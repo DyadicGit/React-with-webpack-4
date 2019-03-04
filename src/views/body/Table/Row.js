@@ -13,7 +13,20 @@ const EyeRow = styled.div`
 
 const Row = styled.tr`
   cursor: pointer;
-  background: ${props => (props.selected ? 'rgba(0,162,195,0.60)' : 'inherit')};
+  background: ${props => (props.selected ? 'rgba(0,162,195,0.15)' : 'inherit')};
+`;
+const TdIcons = styled.td`
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color:  ${props => (props.selected ? '#1AB6CF' : 'inherit')};
+  svg {
+    border: #1AB6CF solid 6px;
+    border-radius: 30%;
+    background: #1AB6CF;
+    color: white;
+  }
 `;
 
 const View = ({ contact, handlers }) => (
@@ -29,10 +42,10 @@ const View = ({ contact, handlers }) => (
     <td>{contact.city}</td>
     <td>{contact.email}</td>
     <td>{contact.phone}</td>
-    <td>
-      <div>E</div>
-      <div>T</div>
-    </td>
+    <TdIcons selected={contact && contact.selected}>
+      <FontAwesomeIcon icon="pencil-alt" />
+      <FontAwesomeIcon icon="trash-alt" />
+    </TdIcons>
   </Row>
 );
 
