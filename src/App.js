@@ -77,9 +77,14 @@ class App extends React.Component {
     });
   };
 
+  handleRowClick = activeContact => () => {
+    this.setState({ activeContact });
+  };
+
   handlers = {
     setActiveContact: this.setActiveContact,
     toggleSortOrderName: this.toggleSortOrderName,
+    handleRowClick: this.handleRowClick,
   };
 
   render() {

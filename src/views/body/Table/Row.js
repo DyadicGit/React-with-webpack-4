@@ -12,8 +12,8 @@ const EyeRow = styled.div`
 `;
 
 
-const View = ({ contact }) => (
-  <tr id={contact.id}>
+const View = ({ contact, handlers }) => (
+  <tr id={contact.id} onClick={handlers.handleRowClick(contact)}>
     <td>
       <EyeRow>{contact.active
         ? <FontAwesomeIcon icon="eye" />
@@ -40,8 +40,11 @@ View.propTypes = {
     id: PropTypes.number,
     name: PropTypes.string,
     phone: PropTypes.string,
-    surname: PropTypes.string,
+    surname: PropTypes.string
   }).isRequired,
+  handlers: PropTypes.shape({
+    handleRowClick: PropTypes.func.isRequired
+  }).isRequired
 };
 
 export default View;

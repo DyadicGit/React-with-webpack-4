@@ -26,7 +26,7 @@ const View = ({ className, contacts, sortOrderName, handlers }) => (
         </tr>
       </Header>
       <Body>
-        {contacts.map(contact => <Row key={contact.id} contact={contact} />)}
+        {contacts.map(contact => <Row key={contact.id} contact={contact} handlers={handlers} />)}
       </Body>
     </Table>
   </SectionTable>
