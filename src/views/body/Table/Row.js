@@ -11,9 +11,13 @@ const EyeRow = styled.div`
   height: 100%;
 `;
 
+const Row = styled.tr`
+  cursor: pointer;
+  background: ${props => (props.selected ? 'rgba(0,162,195,0.60)' : 'inherit')};
+`;
 
 const View = ({ contact, handlers }) => (
-  <tr id={contact.id} onClick={handlers.handleRowClick(contact)}>
+  <Row id={contact.id} selected={contact && contact.selected} onClick={handlers.handleRowClick(contact)}>
     <td>
       <EyeRow>{contact.active
         ? <FontAwesomeIcon icon="eye" />
@@ -29,7 +33,7 @@ const View = ({ contact, handlers }) => (
       <div>E</div>
       <div>T</div>
     </td>
-  </tr>
+  </Row>
 );
 
 View.propTypes = {
@@ -40,11 +44,11 @@ View.propTypes = {
     id: PropTypes.number,
     name: PropTypes.string,
     phone: PropTypes.string,
-    surname: PropTypes.string
+    surname: PropTypes.string,
   }).isRequired,
   handlers: PropTypes.shape({
-    handleRowClick: PropTypes.func.isRequired
-  }).isRequired
+    handleRowClick: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 export default View;

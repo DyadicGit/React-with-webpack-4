@@ -53,7 +53,7 @@ class App extends React.Component {
 
   fetchContacts = async () => {
     try {
-      const response = await fetch('../../misc/contacts.json');
+      const response = await fetch('../../assets/contacts.json');
       const data = await utils.handleResponse(response);
       this.setState({ loading: false, contacts: data });
       console.log(this.state.contacts);
@@ -63,7 +63,14 @@ class App extends React.Component {
     }
   };
 
-  setActiveContact = () => { console.log('active'); };
+  setSelectedFlag = (activeContact) => {
+    const { contacts } = this.state;
+    const selectedContact = contacts.find(contact => contact.id === activeContact.id);
+    const index = contacts.indexOf(selectedContact);
+    const clearedContacts = contacts.map(contact => ({ ...contact, selected: false }));
+    clearedContacts[index] = { ...selectedContact, selected: true };
+    this.setState({ contacts: clearedContacts });
+  };
 
   toggleSortOrderName = () => {
     const { sortOrderName, contacts } = this.state;
@@ -79,10 +86,10 @@ class App extends React.Component {
 
   handleRowClick = activeContact => () => {
     this.setState({ activeContact });
+    this.setSelectedFlag(activeContact);
   };
 
   handlers = {
-    setActiveContact: this.setActiveContact,
     toggleSortOrderName: this.toggleSortOrderName,
     handleRowClick: this.handleRowClick,
   };
