@@ -6,8 +6,9 @@ const borderRadiusSize = '6px';
 
 const SectionTable = styled.div`
   grid-area: table;
-  padding-top: 20px;
-  padding-bottom: 40px;
+  overflow-y: auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
 `;
 const Table = styled.table`
   position: relative;

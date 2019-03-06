@@ -7,8 +7,8 @@ const borderRadiusSize = '6px';
 
 const Container = styled.div`
   grid-area: contactDisplay;
-  padding-top: 20px;
-  padding-bottom: 40px;
+  margin-top: 20px;
+  margin-bottom: 40px;
   padding-left: 5px;
   padding-right: 10px;
 `;
