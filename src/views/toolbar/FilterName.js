@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { SearchInput } from '../../components';
 
-const FilterName = styled.div`
+const Container = styled.div`
   grid-area: filterName;
   place-content: center;
   display: flex;
@@ -11,16 +11,16 @@ const FilterName = styled.div`
 `;
 
 const View = ({ className, handlers }) => (
-  <FilterName className={className}>
+  <Container className={className}>
     <SearchInput placeholder="Name" handleChange={handlers.handleNameSearchResult} />
-  </FilterName>
+  </Container>
 );
 
 View.propTypes = {
   className: PropTypes.string,
   handlers: PropTypes.shape({
-    handleNameSearchResult: PropTypes.func.isRequired
-  }).isRequired
-}
+    handleNameSearchResult: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default View;

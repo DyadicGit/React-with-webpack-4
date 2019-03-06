@@ -30,6 +30,7 @@ const ContactDisplay = styled.div`
   div {
     padding-left: 6px;
     font-family: "Open Sans Semibold", sans-serif;
+    word-break: break-word;
   }
   .headerName , .headerSurname , .headerCity , .headerEmail , .headerPhone {
     text-align: right;  
@@ -73,6 +74,7 @@ const ImageContainer = styled.div`
   grid-area: photo;
   place-content: center;
   place-items: center;
+  contain: content;
 `;
 const Image = styled.div`
   place-content: center;
@@ -84,7 +86,7 @@ const Image = styled.div`
 const Img = styled.img`
   width: auto;
   max-width: 100%;
-  height: 85%;
+  height: auto;
   max-height: 85%;
   object-fit: scale-down;
   border-radius: 50%;

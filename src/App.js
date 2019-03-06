@@ -97,9 +97,15 @@ class App extends React.Component {
     this.setSelectedFlag(activeContact);
   };
 
-  handleNameSearchResult = (searchTerm) => {
+  handleShowActiveClick = (checked) => {
+    console.log(checked);
     const { searchTerms } = this.state;
-    this.setState({ searchTerms: { ...searchTerms, name: this.processString(searchTerm) } });
+    this.setState({ searchTerms: { ...searchTerms, showActive: checked } });
+  };
+
+  handleSearchResultByProperty = property => (searchTerm) => {
+    const { searchTerms } = this.state;
+    this.setState({ searchTerms: { ...searchTerms, [property]: this.processString(searchTerm) } });
   };
 
   processString = str => str.toString().toLowerCase().trimLeft();
@@ -107,7 +113,13 @@ class App extends React.Component {
   getFilteredContacts = () => {
     const { contacts, searchTerms } = this.state;
     const filterPredicate = (contact) => {
-      return this.processString(contact.name).includes(searchTerms.name);
+      const uncheckedShowActiveCondition = this.processString(contact.name).includes(searchTerms.name)
+        && this.processString(contact.city).includes(searchTerms.city);
+
+      if (searchTerms.showActive) {
+        return uncheckedShowActiveCondition && (contact.active || false) === searchTerms.showActive;
+      }
+      return uncheckedShowActiveCondition;
     };
 
     return contacts.filter(filterPredicate);
@@ -116,7 +128,9 @@ class App extends React.Component {
   handlers = {
     toggleSortOrderName: this.toggleSortOrderName,
     handleRowClick: this.handleRowClick,
-    handleNameSearchResult: this.handleNameSearchResult,
+    handleNameSearchResult: this.handleSearchResultByProperty('name'), // ToDo: create enum
+    handleCitySearchResult: this.handleSearchResultByProperty('city'),
+    handleShowActiveClick: this.handleShowActiveClick,
   };
 
   render() {
@@ -137,8 +151,8 @@ class App extends React.Component {
         <Login className="header" />
 
         <FilterName className="toolbar" handlers={this.handlers} />
-        <FilterCity className="toolbar" />
-        <FilterShowActive className="toolbar" />
+        <FilterCity className="toolbar" handlers={this.handlers} />
+        <FilterShowActive className="toolbar" handlers={this.handlers} />
         <FilterGo className="toolbar" />
         <AddNewContract className="toolbar" />
 

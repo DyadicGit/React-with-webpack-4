@@ -12,28 +12,34 @@ const SectionTable = styled.div`
 const Table = styled.table`
   position: relative;
   width: 100%;
-  height: 100%;
+  height: fit-content;
   font-family: "Open Sans Regular", sans-serif;
   font-size: 1rem;
   
   border: rgba(0,0,0,0) solid 1px;
   border-radius: ${borderRadiusSize};
   border-spacing: 0;
-  tr:first-of-type th:first-child {
-    border-top-left-radius: ${borderRadiusSize};    
-  }
-  tr:first-of-type th:last-child {
-    border-top-right-radius: ${borderRadiusSize};    
-  }
-  tr:last-of-type td:first-child {
-    border-bottom-left-radius: ${borderRadiusSize};    
-  }
-  tr:last-of-type td:last-child {
-    border-bottom-right-radius: ${borderRadiusSize};    
-  }
-/*tr:nth-child(odd) {
+  tr {
+    &:first-of-type {
+      th:first-child {
+        border-top-left-radius: ${borderRadiusSize};    
+      }
+      th:last-child {
+        border-top-right-radius: ${borderRadiusSize};    
+      }
+    } 
+    &:last-of-type {
+      td:first-child {
+        border-bottom-left-radius: ${borderRadiusSize};    
+      }
+      td:last-child {
+        border-bottom-right-radius: ${borderRadiusSize};    
+      }
+    }
+/*&:nth-child(odd) {
   background-color: #EEEEEE;
 }*/
+  }
 `;
 const Header = styled.thead`
   color: white;
@@ -55,12 +61,12 @@ const Body = styled.tbody`
   background-color: rgba(255, 255, 255, 0.98);
   tr {
     height: 5.61vh;
-  }
-  tr:hover {
-    background-color: rgba(0,162,195,0.29);
-  }
-  tr>td {
-    border-top: rgba(0,0,0,0.10) solid 1px;
+    &:hover {
+      background-color: rgba(0,162,195,0.29);
+    }
+    &>td {
+      border-top: rgba(0,0,0,0.10) solid 1px;
+    }
   }
 `;
 const ColumnWithSort = styled.th`
