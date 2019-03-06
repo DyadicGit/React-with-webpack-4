@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { SearchInput } from '../../components';
 
 const FilterName = styled.div`
   grid-area: filterName;
@@ -8,22 +9,18 @@ const FilterName = styled.div`
   display: flex;
   place-items: center;
 `;
-const RoundInput = styled.input`
-  width: 80%;
-  height: 40%;
-  border-radius: 15px;
-  font-size: larger;
-  padding-left: 5%;
-`;
 
-const View = ({ className }) => (
+const View = ({ className, handlers }) => (
   <FilterName className={className}>
-    <RoundInput type="text" placeholder="Name" />
+    <SearchInput placeholder="Name" handleChange={handlers.handleNameSearchResult} />
   </FilterName>
 );
 
 View.propTypes = {
   className: PropTypes.string,
-};
+  handlers: PropTypes.shape({
+    handleNameSearchResult: PropTypes.func.isRequired
+  }).isRequired
+}
 
 export default View;

@@ -1,12 +1,15 @@
 import React from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faUserCircle, faEye, faEyeSlash, faArrowDown, faPencilAlt, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+  faUserCircle, faEye, faEyeSlash,
+  faArrowDown, faPencilAlt, faTrashAlt,
+} from '@fortawesome/free-solid-svg-icons';
 import {
   LeftHeader, LeftToolbar, LeftBody, LeftFooter,
   RightHeader, RightToolbar, RightBody, RightFooter,
   Page,
 } from './App.styles';
-import { LoadingComponent } from './components';
+import { LoadingText as LoadingComponent } from './components';
 import utils from './utils';
 // header
 import Logo from './views/header/Logo';
@@ -43,6 +46,11 @@ class App extends React.Component {
       contacts: [],
       activeContact: null,
       sortOrderName: 'asc',
+      searchTerms: {
+        name: '',
+        city: '',
+        showActive: false,
+      },
     };
   }
 
@@ -89,9 +97,26 @@ class App extends React.Component {
     this.setSelectedFlag(activeContact);
   };
 
+  handleNameSearchResult = (searchTerm) => {
+    const { searchTerms } = this.state;
+    this.setState({ searchTerms: { ...searchTerms, name: this.processString(searchTerm) } });
+  };
+
+  processString = str => str.toString().toLowerCase().trimLeft();
+
+  getFilteredContacts = () => {
+    const { contacts, searchTerms } = this.state;
+    const filterPredicate = (contact) => {
+      return this.processString(contact.name).includes(searchTerms.name);
+    };
+
+    return contacts.filter(filterPredicate);
+  };
+
   handlers = {
     toggleSortOrderName: this.toggleSortOrderName,
     handleRowClick: this.handleRowClick,
+    handleNameSearchResult: this.handleNameSearchResult,
   };
 
   render() {
@@ -111,7 +136,7 @@ class App extends React.Component {
         <Search className="header" />
         <Login className="header" />
 
-        <FilterName className="toolbar" />
+        <FilterName className="toolbar" handlers={this.handlers} />
         <FilterCity className="toolbar" />
         <FilterShowActive className="toolbar" />
         <FilterGo className="toolbar" />
@@ -120,7 +145,7 @@ class App extends React.Component {
         <ContactDisplay className="body" activeContact={this.state.activeContact} />
         <Table
           className="body"
-          contacts={this.state.contacts}
+          contacts={this.getFilteredContacts()}
           sortOrderName={this.state.sortOrderName}
           handlers={this.handlers}
         />
