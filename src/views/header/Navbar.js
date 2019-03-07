@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { SpanOpenSans } from '../../components';
+import CONST from '../../config/constants';
 
-const lightBlueColor = '#0CA2BB';
-const borderRadius = '15px';
+const { lightBlueColor, borderRadius } = CONST;
 
 const Navbar = styled.div`
   grid-area: navbar;
@@ -38,7 +38,7 @@ const Button = styled.button`
   align-items: center;
   :hover {
     cursor: pointer;
-    box-shadow: 0 0 0 2px rgba(78, 133, 136, 0.82), 0 0 0 2px rgba(78, 133, 136, 0.82);
+    box-shadow: ${CONST.boxShadowSetting};
   }
   :focus {
     background: #198592;

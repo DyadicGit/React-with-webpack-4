@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import utils from '../utils';
+import CONST from '../config/constants';
 
 const SearchInput = styled.input`
   width: 80%;
   height: 40%;
-  border-radius: 15px;
+  border-radius: ${CONST.borderRadius};
   font-size: larger;
   padding-left: 5%;
 `;
