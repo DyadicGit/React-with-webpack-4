@@ -1,5 +1,5 @@
 import React from 'react';
-import Proptypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const LinksLeft = styled.div`
@@ -31,7 +31,7 @@ const View = ({ className }) => (
 );
 
 View.propTypes = {
-  className: Proptypes.string.isRequired,
+  className: PropTypes.string.isRequired,
 };
 
 export default View;
