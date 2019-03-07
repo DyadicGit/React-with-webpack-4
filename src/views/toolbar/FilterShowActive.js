@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { SpanOpenSans } from '../../components';
 
 const FilterName = styled.div`
   grid-area: filterShowActive;
@@ -9,13 +10,13 @@ const FilterName = styled.div`
   place-items: center;
   label {
     padding-left: 5px;
+    &:hover {
+      cursor: pointer;
+    }
   }
-`;
-
-const SpanOpenSans = styled.span`
-  font-family: "Open Sans Semibold", sans-serif;
-  font-size: 1.2rem;
-  color: white;
+  input:hover {
+    cursor: pointer;
+  }
 `;
 
 const View = ({ className, handlers }) => (

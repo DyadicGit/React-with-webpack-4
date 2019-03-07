@@ -19,7 +19,7 @@ const Button = styled.button`
     width: 70%;
     :hover {
       cursor: pointer;
-      border: rgba(78, 133, 136, 0.82) 4px solid;
+      box-shadow: 0 0 0 2px rgba(78, 133, 136, 0.82), 0 0 0 2px rgba(78, 133, 136, 0.82);
     }
 `;
 

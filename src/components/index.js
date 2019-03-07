@@ -6,7 +6,7 @@ import SearchInput from './SearchInput';
 
 const SpanOpenSans = styled.span`
   font-family: "Open Sans Semibold", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.2vmax;
   color: white;
 `;
 
