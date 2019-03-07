@@ -12,7 +12,7 @@ const LastSyncedLogo = styled.div`
 
 const View = ({ className }) => (
   <LastSyncedLogo className={className}>
-    <FontAwesomeIcon icon="stethoscope" color="white" style={{ width: '85%', height: '85%' }} />
+    <FontAwesomeIcon icon="cloud-upload-alt" color="white" style={{ width: '85%', height: '85%' }} />
   </LastSyncedLogo>
 );
 

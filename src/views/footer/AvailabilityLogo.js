@@ -12,7 +12,7 @@ const AvailabilityLogo = styled.div`
 
 const View = ({ className }) => (
   <AvailabilityLogo className={className}>
-    <FontAwesomeIcon icon="cloud-upload-alt" color="white" style={{ width: '85%', height: '85%' }} />
+    <FontAwesomeIcon icon="stethoscope" color="white" style={{ width: '85%', height: '85%' }} />
   </AvailabilityLogo>
 );
 
