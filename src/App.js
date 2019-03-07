@@ -3,7 +3,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faUserCircle, faEye, faEyeSlash,
   faArrowDown, faPencilAlt, faTrashAlt,
-  faPlusCircle, faSearch
+  faPlusCircle, faSearch, faCloudUploadAlt,
+  faStethoscope, faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   LeftHeader, LeftToolbar, LeftBody, LeftFooter,
@@ -36,7 +37,7 @@ import LinksRight from './views/footer/LinksRight';
 import AvailabilityLogo from './views/footer/AvailabilityLogo';
 import Availability from './views/footer/Availability';
 
-library.add(faUserCircle, faEye, faEyeSlash, faArrowDown, faPencilAlt, faTrashAlt, faPlusCircle, faSearch);
+library.add(faUserCircle, faEye, faEyeSlash, faArrowDown, faPencilAlt, faTrashAlt, faPlusCircle, faSearch, faCloudUploadAlt, faStethoscope, faUser);
 
 
 class App extends React.Component {

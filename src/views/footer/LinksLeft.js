@@ -9,7 +9,7 @@ const List = styled.ul`
   list-style-type: none;
   line-height: 3.2vh;
   font-family: "Open Sans Semibold", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.2vmax;
   color: white;
   padding-left: 0;
 `;
