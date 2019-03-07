@@ -15,7 +15,7 @@ const Table = styled.table`
   width: 100%;
   height: fit-content;
   font-family: "Open Sans Regular", sans-serif;
-  font-size: 1rem;
+  font-size: 1.2vmax;
   
   border: rgba(0,0,0,0) solid 1px;
   border-radius: ${borderRadiusSize};

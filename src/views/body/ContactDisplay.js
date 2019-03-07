@@ -30,6 +30,7 @@ const ContactDisplay = styled.div`
   div {
     padding-left: 6px;
     font-family: "Open Sans Semibold", sans-serif;
+    font-size: 1vmax;
     word-break: break-word;
   }
   .headerName , .headerSurname , .headerCity , .headerEmail , .headerPhone {
