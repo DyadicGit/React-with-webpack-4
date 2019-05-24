@@ -1,0 +1,67 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add styled-components
+
+PATH: 
+  C:\APPS\cmder\bin;C:\APPS\cmder\vendor\bin;C:\APPS\cmder\vendor\conemu-maximus5\ConEmu\Scripts;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\Olgerd\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin\;C:\Program Files (x86)\Microsoft Emulator Manager\1.0\;C:\Ruby24-x64\bin;C:\Users\Olgerd\.windows-build-tools\python27;C:\Users\Olgerd\AppData\Roaming\nvm\v8.14.0\node_modules\npm\node_modules\npm-lifecycle\node-gyp-bin;C:\Program Files\nodejs\node_modules\windows-build-tools\node_modules\.bin;C:\Program Files\nodejs\node_modules\.bin;C:\APPS\cmder\bin;C:\APPS\cmder\vendor\bin;C:\APPS\cmder\vendor\conemu-maximus5\ConEmu\Scripts;C:\APPS\cmder\vendor\conemu-maximus5;C:\APPS\cmder\vendor\conemu-maximus5\ConEmu;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\Olgerd\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin\;C:\Users\Olgerd\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA 2018.3\bin;C:\APPS\apache-maven-3.6.0\bin;C:\Users\Olgerd\AppData\Local\Yarn\bin;C:\opt_loader;C:\Program Files\Java\jdk1.8.0_191\bin;C:\Gradle\gradle-4.10.3\bin;C:\Grails\grails-2.5.5\bin;C:\APPS\cmder\vendor\git-for-windows\cmd;C:\APPS\cmder\vendor\git-for-windows\mingw64\bin;C:\APPS\cmder\vendor\git-for-windows\usr\bin;C:\APPS\cmder;C:\Users\Olgerd\AppData\Local\Android\Sdk\platform-tools;C:\Users\Olgerd\AppData\Local\Programs\Microsoft VS Code\bin;C:\APPS\cmder\vendor\git-for-windows\cmd;C:\APPS\cmder\vendor\git-for-windows\mingw64\bin;C:\APPS\cmder\vendor\git-for-windows\usr\bin;C:\APPS\cmder
+
+Yarn version: 
+  1.12.3
+
+Node version: 
+  10.14.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND sol-spsnexus01-p.axadmin.net sol-spsnexus01-p.axadmin.net:443
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:57:26)
+
+npm manifest: 
+  {
+    "name": "react-with-webpack-4",
+    "version": "1.0.0",
+    "description": "minimalistic React app which I use for playgrounds",
+    "main": "Logo.js",
+    "scripts": {
+      "start": "webpack-dev-server --mode development --open",
+      "dev": "webpack --mode development --output ./dist/main.js",
+      "prod": "webpack --mode production --output ./dist/main.js",
+      "watch": "webpack --watch -d"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "@babel/core": "^7.2.2",
+      "@babel/plugin-proposal-class-properties": "^7.2.3",
+      "@babel/plugin-transform-runtime": "^7.2.0",
+      "@babel/preset-env": "^7.2.3",
+      "@babel/preset-react": "^7.0.0",
+      "babel-eslint": "^10.0.1",
+      "babel-loader": "^8.0.5",
+      "css-loader": "^0.28.11",
+      "eslint": "^5.12.0",
+      "eslint-config-airbnb": "^17.1.0",
+      "eslint-plugin-import": "^2.14.0",
+      "eslint-plugin-jsx-a11y": "^6.1.2",
+      "eslint-plugin-react": "^7.12.3",
+      "html-loader": "^0.5.5",
+      "html-webpack-plugin": "^3.0.7",
+      "mini-css-extract-plugin": "^0.2.0",
+      "react": "^16.3.0",
+      "react-dom": "^16.3.0",
+      "webpack": "^4.28.4",
+      "webpack-cli": "^3.2.1",
+      "webpack-dev-server": "^3.1.14"
+    },
+    "dependencies": {
+      "@babel/runtime": "^7.2.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

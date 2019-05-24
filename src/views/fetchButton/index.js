@@ -1,22 +1,32 @@
 import React from 'react';
 import utils from '../../utils';
+import data from '../../config/data';
+import Tree from '../Tree';
 
 class Container extends React.Component {
-  handleClick = async () => {
-    try {
-      const response = await fetch('https://fetchbutton.free.beeceptor.com');
-      const data = await utils.handleResponse(response);
-      console.log(data);
-    } catch (e) {
-      console.error(e);
-    }
+  state = {
+    show: false,
+    datas: null,
+  };
+
+  handleClick = () => {
+    const { show } = this.state;
+    this.setState({
+      show: !show,
+      datas: data,
+    });
   };
 
   render() {
     return (
-      <button type="button" onClick={this.handleClick}>
-        fetch from beeceptor.com
-      </button>
+      <div>
+        <button type="button" onClick={this.handleClick}>
+          Displays
+        </button>
+        {
+          this.state.show && <Tree data={this.state.datas.Lorem} />
+        }
+      </div>
     );
   }
 }
