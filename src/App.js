@@ -1,8 +1,9 @@
 import React from 'react';
+import LandingPage from './views/pages/LandingPage';
 
 const App = () => (
   <div>
-  <LandingPage />
+    <LandingPage />
   </div>
 );
 

@@ -33,7 +33,8 @@
     "react-dom": "^16.3.0",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^3.1.14",
+    "prop-types": "latest"
   },
   "dependencies": {
     "@babel/runtime": "^7.2.0"

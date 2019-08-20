@@ -1,4 +1,5 @@
 import React from 'react';
+import Booklet from '../components/Booklet';
 
 class LandingPage extends React.Component {
   state = {
@@ -8,8 +9,9 @@ class LandingPage extends React.Component {
   render() {
     return (
       <div>
-
+        <Booklet />
       </div>
     );
   }
 }
+export default LandingPage;

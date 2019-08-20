@@ -1,1 +1,3 @@
-import {BookletComponent} from './BookletComponent';
+import BookletComponent from './BookletComponent';
+
+export default BookletComponent;
