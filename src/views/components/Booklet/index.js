@@ -1,0 +1,1 @@
+import {BookletComponent} from './BookletComponent';
