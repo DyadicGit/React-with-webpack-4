@@ -13,7 +13,7 @@ const TestPage = () => {
   return (
     <section>
       <h1>Testing place</h1>
-      {{...template}}
+      {template}
     </section>
   );
 };
