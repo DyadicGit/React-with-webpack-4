@@ -1,11 +1,13 @@
 import React from 'react';
 import FetchButton from './views/fetchButton';
+import TestPage from './views/test-page';
 
 const App = () => (
-  <div>
+  <main>
     <p>React here!</p>
     <FetchButton />
-  </div>
+    <TestPage/>
+  </main>
 );
 
 export default App;
