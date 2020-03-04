@@ -3,6 +3,7 @@ import LandingPage from './views/pages/LandingPage';
 
 const App = () => (
   <div>
+    {console.log('dom')}
     <LandingPage />
   </div>
 );
