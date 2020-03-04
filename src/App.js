@@ -1,6 +1,6 @@
 import React from 'react';
 import FetchButton from './views/fetchButton';
-import TestPage from './views/test-page';
+import { TestPage } from './views/test-page';
 
 const App = () => (
   <main>
