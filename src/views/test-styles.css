@@ -3,10 +3,21 @@
     padding: 10px;
     margin-right: 20px;
 }
+.description-box + .description-box { margin-top: 15px; }
+
 .theme-blue .description-box { background-color: aliceblue; }
 .theme-blue .description-box:nth-of-type(odd) { background-color: powderblue; }
-.theme-blue .description-box + .description-box { margin-top: 10px; }
 
 .theme-red .description-box { background-color: lightpink; }
 .theme-red .description-box:nth-of-type(odd) { background-color: indianred; }
-.theme-red .description-box + .description-box { margin-top: 20px; }
+
+
+.radio {
+    display: grid;
+    grid-template-columns: 50px auto;
+    align-items: center;
+}
+.radio input { height: 20px; width: 20px; }
+
+.theme-blue.radio label { color: blue }
+.theme-red.radio label { color: red }
