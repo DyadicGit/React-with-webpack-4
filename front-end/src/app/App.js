@@ -2,7 +2,7 @@ import React from 'react'
 import { fetchUser } from './redux-rxjs/epic'
 import { connect } from 'react-redux'
 
-const AppRx = ({ dispatch, state }) => {
+const App = ({ dispatch, state }) => {
   const handleLoad = () => {
     dispatch(fetchUser('DyadicGit'))
   }
@@ -18,4 +18,4 @@ const AppRx = ({ dispatch, state }) => {
 export default connect(
   state => ({ state }),
   dispatch => ({ dispatch })
-)(AppRx)
+)(App)
