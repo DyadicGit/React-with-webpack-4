@@ -1,5 +1,5 @@
 {
-  "name": "serve-statics",
+  "name": "react-with-webpack-4",
   "version": "1.0.0",
   "scripts": {
     "start": "cd ./front-end && npm run prod && cd ../server && npm run start",
